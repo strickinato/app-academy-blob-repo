@@ -1,4 +1,4 @@
---- &70286271657660 !ruby/object:Board
+--- &1 !ruby/object:Board
 size: 9
 bomb_count: 9
 grid:
@@ -6,8 +6,8 @@ grid:
     pos:
     - 0
     - 0
-    board: *70286271657660
-    revealed: true
+    board: *1
+    revealed: false
     bomb: false
     flagged: false
     selected: false
@@ -15,7 +15,7 @@ grid:
     pos:
     - 0
     - 1
-    board: *70286271657660
+    board: *1
     revealed: true
     bomb: false
     flagged: false
@@ -24,7 +24,7 @@ grid:
     pos:
     - 0
     - 2
-    board: *70286271657660
+    board: *1
     revealed: true
     bomb: false
     flagged: false
@@ -33,7 +33,7 @@ grid:
     pos:
     - 0
     - 3
-    board: *70286271657660
+    board: *1
     revealed: true
     bomb: false
     flagged: false
@@ -42,7 +42,7 @@ grid:
     pos:
     - 0
     - 4
-    board: *70286271657660
+    board: *1
     revealed: true
     bomb: false
     flagged: false
@@ -51,16 +51,7 @@ grid:
     pos:
     - 0
     - 5
-    board: *70286271657660
-    revealed: true
-    bomb: false
-    flagged: false
-    selected: false
-  - !ruby/object:Tile
-    pos:
-    - 0
-    - 6
-    board: *70286271657660
+    board: *1
     revealed: false
     bomb: true
     flagged: false
@@ -68,8 +59,17 @@ grid:
   - !ruby/object:Tile
     pos:
     - 0
+    - 6
+    board: *1
+    revealed: false
+    bomb: false
+    flagged: false
+    selected: false
+  - !ruby/object:Tile
+    pos:
+    - 0
     - 7
-    board: *70286271657660
+    board: *1
     revealed: false
     bomb: false
     flagged: false
@@ -78,25 +78,25 @@ grid:
     pos:
     - 0
     - 8
-    board: *70286271657660
+    board: *1
     revealed: false
-    bomb: true
+    bomb: false
     flagged: false
     selected: false
 - - !ruby/object:Tile
     pos:
     - 1
     - 0
-    board: *70286271657660
-    revealed: true
-    bomb: false
+    board: *1
+    revealed: false
+    bomb: true
     flagged: false
     selected: false
   - !ruby/object:Tile
     pos:
     - 1
     - 1
-    board: *70286271657660
+    board: *1
     revealed: true
     bomb: false
     flagged: false
@@ -105,7 +105,7 @@ grid:
     pos:
     - 1
     - 2
-    board: *70286271657660
+    board: *1
     revealed: true
     bomb: false
     flagged: false
@@ -114,7 +114,7 @@ grid:
     pos:
     - 1
     - 3
-    board: *70286271657660
+    board: *1
     revealed: true
     bomb: false
     flagged: false
@@ -123,7 +123,7 @@ grid:
     pos:
     - 1
     - 4
-    board: *70286271657660
+    board: *1
     revealed: true
     bomb: false
     flagged: false
@@ -132,7 +132,7 @@ grid:
     pos:
     - 1
     - 5
-    board: *70286271657660
+    board: *1
     revealed: true
     bomb: false
     flagged: false
@@ -141,34 +141,34 @@ grid:
     pos:
     - 1
     - 6
-    board: *70286271657660
+    board: *1
     revealed: false
-    bomb: false
+    bomb: true
     flagged: false
     selected: false
   - !ruby/object:Tile
     pos:
     - 1
     - 7
-    board: *70286271657660
+    board: *1
     revealed: false
-    bomb: false
+    bomb: true
     flagged: false
     selected: false
   - !ruby/object:Tile
     pos:
     - 1
     - 8
-    board: *70286271657660
+    board: *1
     revealed: false
-    bomb: false
+    bomb: true
     flagged: false
     selected: false
 - - !ruby/object:Tile
     pos:
     - 2
     - 0
-    board: *70286271657660
+    board: *1
     revealed: true
     bomb: false
     flagged: false
@@ -177,7 +177,7 @@ grid:
     pos:
     - 2
     - 1
-    board: *70286271657660
+    board: *1
     revealed: true
     bomb: false
     flagged: false
@@ -186,7 +186,7 @@ grid:
     pos:
     - 2
     - 2
-    board: *70286271657660
+    board: *1
     revealed: true
     bomb: false
     flagged: false
@@ -195,7 +195,7 @@ grid:
     pos:
     - 2
     - 3
-    board: *70286271657660
+    board: *1
     revealed: true
     bomb: false
     flagged: false
@@ -204,7 +204,7 @@ grid:
     pos:
     - 2
     - 4
-    board: *70286271657660
+    board: *1
     revealed: true
     bomb: false
     flagged: false
@@ -213,7 +213,7 @@ grid:
     pos:
     - 2
     - 5
-    board: *70286271657660
+    board: *1
     revealed: true
     bomb: false
     flagged: false
@@ -222,8 +222,8 @@ grid:
     pos:
     - 2
     - 6
-    board: *70286271657660
-    revealed: false
+    board: *1
+    revealed: true
     bomb: false
     flagged: false
     selected: false
@@ -231,8 +231,8 @@ grid:
     pos:
     - 2
     - 7
-    board: *70286271657660
-    revealed: false
+    board: *1
+    revealed: true
     bomb: false
     flagged: false
     selected: false
@@ -240,7 +240,7 @@ grid:
     pos:
     - 2
     - 8
-    board: *70286271657660
+    board: *1
     revealed: false
     bomb: false
     flagged: false
@@ -249,224 +249,224 @@ grid:
     pos:
     - 3
     - 0
-    board: *70286271657660
+    board: *1
     revealed: true
     bomb: false
     flagged: false
     selected: false
-  - !ruby/object:Tile
+  - &2 !ruby/object:Tile
     pos:
     - 3
     - 1
-    board: *70286271657660
-    revealed: true
-    bomb: false
-    flagged: false
-    selected: false
-  - !ruby/object:Tile
-    pos:
-    - 3
-    - 2
-    board: *70286271657660
-    revealed: true
-    bomb: false
-    flagged: false
-    selected: false
-  - !ruby/object:Tile
-    pos:
-    - 3
-    - 3
-    board: *70286271657660
-    revealed: true
-    bomb: false
-    flagged: false
-    selected: false
-  - !ruby/object:Tile
-    pos:
-    - 3
-    - 4
-    board: *70286271657660
-    revealed: true
-    bomb: false
-    flagged: false
-    selected: false
-  - !ruby/object:Tile
-    pos:
-    - 3
-    - 5
-    board: *70286271657660
-    revealed: false
-    bomb: true
-    flagged: false
-    selected: false
-  - !ruby/object:Tile
-    pos:
-    - 3
-    - 6
-    board: *70286271657660
-    revealed: false
-    bomb: false
-    flagged: false
-    selected: false
-  - !ruby/object:Tile
-    pos:
-    - 3
-    - 7
-    board: *70286271657660
-    revealed: false
-    bomb: false
-    flagged: false
-    selected: false
-  - !ruby/object:Tile
-    pos:
-    - 3
-    - 8
-    board: *70286271657660
-    revealed: false
-    bomb: false
-    flagged: false
-    selected: false
-- - !ruby/object:Tile
-    pos:
-    - 4
-    - 0
-    board: *70286271657660
-    revealed: true
-    bomb: false
-    flagged: false
-    selected: false
-  - !ruby/object:Tile
-    pos:
-    - 4
-    - 1
-    board: *70286271657660
-    revealed: true
-    bomb: false
-    flagged: false
-    selected: false
-  - !ruby/object:Tile
-    pos:
-    - 4
-    - 2
-    board: *70286271657660
-    revealed: true
-    bomb: false
-    flagged: false
-    selected: false
-  - !ruby/object:Tile
-    pos:
-    - 4
-    - 3
-    board: *70286271657660
-    revealed: true
-    bomb: false
-    flagged: false
-    selected: false
-  - !ruby/object:Tile
-    pos:
-    - 4
-    - 4
-    board: *70286271657660
-    revealed: true
-    bomb: false
-    flagged: false
-    selected: false
-  - !ruby/object:Tile
-    pos:
-    - 4
-    - 5
-    board: *70286271657660
-    revealed: true
-    bomb: false
-    flagged: false
-    selected: false
-  - !ruby/object:Tile
-    pos:
-    - 4
-    - 6
-    board: *70286271657660
-    revealed: false
-    bomb: true
-    flagged: false
-    selected: false
-  - !ruby/object:Tile
-    pos:
-    - 4
-    - 7
-    board: *70286271657660
-    revealed: false
-    bomb: false
-    flagged: false
-    selected: false
-  - !ruby/object:Tile
-    pos:
-    - 4
-    - 8
-    board: *70286271657660
-    revealed: false
-    bomb: false
-    flagged: false
-    selected: false
-- - !ruby/object:Tile
-    pos:
-    - 5
-    - 0
-    board: *70286271657660
-    revealed: false
-    bomb: false
-    flagged: false
-    selected: false
-  - !ruby/object:Tile
-    pos:
-    - 5
-    - 1
-    board: *70286271657660
-    revealed: false
-    bomb: true
-    flagged: false
-    selected: false
-  - !ruby/object:Tile
-    pos:
-    - 5
-    - 2
-    board: *70286271657660
-    revealed: true
-    bomb: false
-    flagged: false
-    selected: false
-  - !ruby/object:Tile
-    pos:
-    - 5
-    - 3
-    board: *70286271657660
-    revealed: true
-    bomb: false
-    flagged: false
-    selected: false
-  - &70286271677720 !ruby/object:Tile
-    pos:
-    - 5
-    - 4
-    board: *70286271657660
+    board: *1
     revealed: true
     bomb: false
     flagged: false
     selected: true
   - !ruby/object:Tile
     pos:
-    - 5
-    - 5
-    board: *70286271657660
+    - 3
+    - 2
+    board: *1
     revealed: true
     bomb: false
     flagged: false
     selected: false
   - !ruby/object:Tile
     pos:
+    - 3
+    - 3
+    board: *1
+    revealed: true
+    bomb: false
+    flagged: false
+    selected: false
+  - !ruby/object:Tile
+    pos:
+    - 3
+    - 4
+    board: *1
+    revealed: true
+    bomb: false
+    flagged: false
+    selected: false
+  - !ruby/object:Tile
+    pos:
+    - 3
+    - 5
+    board: *1
+    revealed: true
+    bomb: false
+    flagged: false
+    selected: false
+  - !ruby/object:Tile
+    pos:
+    - 3
+    - 6
+    board: *1
+    revealed: true
+    bomb: false
+    flagged: false
+    selected: false
+  - !ruby/object:Tile
+    pos:
+    - 3
+    - 7
+    board: *1
+    revealed: true
+    bomb: false
+    flagged: false
+    selected: false
+  - !ruby/object:Tile
+    pos:
+    - 3
+    - 8
+    board: *1
+    revealed: false
+    bomb: true
+    flagged: false
+    selected: false
+- - !ruby/object:Tile
+    pos:
+    - 4
+    - 0
+    board: *1
+    revealed: true
+    bomb: false
+    flagged: false
+    selected: false
+  - !ruby/object:Tile
+    pos:
+    - 4
+    - 1
+    board: *1
+    revealed: true
+    bomb: false
+    flagged: false
+    selected: false
+  - !ruby/object:Tile
+    pos:
+    - 4
+    - 2
+    board: *1
+    revealed: true
+    bomb: false
+    flagged: false
+    selected: false
+  - !ruby/object:Tile
+    pos:
+    - 4
+    - 3
+    board: *1
+    revealed: false
+    bomb: true
+    flagged: false
+    selected: false
+  - !ruby/object:Tile
+    pos:
+    - 4
+    - 4
+    board: *1
+    revealed: true
+    bomb: false
+    flagged: false
+    selected: false
+  - !ruby/object:Tile
+    pos:
+    - 4
+    - 5
+    board: *1
+    revealed: true
+    bomb: false
+    flagged: false
+    selected: false
+  - !ruby/object:Tile
+    pos:
+    - 4
+    - 6
+    board: *1
+    revealed: true
+    bomb: false
+    flagged: false
+    selected: false
+  - !ruby/object:Tile
+    pos:
+    - 4
+    - 7
+    board: *1
+    revealed: true
+    bomb: false
+    flagged: false
+    selected: false
+  - !ruby/object:Tile
+    pos:
+    - 4
+    - 8
+    board: *1
+    revealed: false
+    bomb: false
+    flagged: false
+    selected: false
+- - !ruby/object:Tile
+    pos:
+    - 5
+    - 0
+    board: *1
+    revealed: false
+    bomb: false
+    flagged: false
+    selected: false
+  - !ruby/object:Tile
+    pos:
+    - 5
+    - 1
+    board: *1
+    revealed: false
+    bomb: true
+    flagged: false
+    selected: false
+  - !ruby/object:Tile
+    pos:
+    - 5
+    - 2
+    board: *1
+    revealed: false
+    bomb: false
+    flagged: false
+    selected: false
+  - !ruby/object:Tile
+    pos:
+    - 5
+    - 3
+    board: *1
+    revealed: false
+    bomb: false
+    flagged: false
+    selected: false
+  - !ruby/object:Tile
+    pos:
+    - 5
+    - 4
+    board: *1
+    revealed: false
+    bomb: false
+    flagged: false
+    selected: false
+  - !ruby/object:Tile
+    pos:
+    - 5
+    - 5
+    board: *1
+    revealed: false
+    bomb: true
+    flagged: false
+    selected: false
+  - !ruby/object:Tile
+    pos:
     - 5
     - 6
-    board: *70286271657660
-    revealed: true
+    board: *1
+    revealed: false
     bomb: false
     flagged: false
     selected: false
@@ -474,8 +474,8 @@ grid:
     pos:
     - 5
     - 7
-    board: *70286271657660
-    revealed: true
+    board: *1
+    revealed: false
     bomb: false
     flagged: false
     selected: false
@@ -483,7 +483,7 @@ grid:
     pos:
     - 5
     - 8
-    board: *70286271657660
+    board: *1
     revealed: false
     bomb: false
     flagged: false
@@ -492,7 +492,7 @@ grid:
     pos:
     - 6
     - 0
-    board: *70286271657660
+    board: *1
     revealed: false
     bomb: false
     flagged: false
@@ -501,7 +501,7 @@ grid:
     pos:
     - 6
     - 1
-    board: *70286271657660
+    board: *1
     revealed: false
     bomb: false
     flagged: false
@@ -510,17 +510,17 @@ grid:
     pos:
     - 6
     - 2
-    board: *70286271657660
+    board: *1
     revealed: false
-    bomb: true
+    bomb: false
     flagged: false
     selected: false
   - !ruby/object:Tile
     pos:
     - 6
     - 3
-    board: *70286271657660
-    revealed: true
+    board: *1
+    revealed: false
     bomb: false
     flagged: false
     selected: false
@@ -528,8 +528,8 @@ grid:
     pos:
     - 6
     - 4
-    board: *70286271657660
-    revealed: true
+    board: *1
+    revealed: false
     bomb: false
     flagged: false
     selected: false
@@ -537,8 +537,8 @@ grid:
     pos:
     - 6
     - 5
-    board: *70286271657660
-    revealed: true
+    board: *1
+    revealed: false
     bomb: false
     flagged: false
     selected: false
@@ -546,8 +546,8 @@ grid:
     pos:
     - 6
     - 6
-    board: *70286271657660
-    revealed: true
+    board: *1
+    revealed: false
     bomb: false
     flagged: false
     selected: false
@@ -555,8 +555,8 @@ grid:
     pos:
     - 6
     - 7
-    board: *70286271657660
-    revealed: true
+    board: *1
+    revealed: false
     bomb: false
     flagged: false
     selected: false
@@ -564,7 +564,7 @@ grid:
     pos:
     - 6
     - 8
-    board: *70286271657660
+    board: *1
     revealed: false
     bomb: false
     flagged: false
@@ -573,16 +573,16 @@ grid:
     pos:
     - 7
     - 0
-    board: *70286271657660
+    board: *1
     revealed: false
-    bomb: true
+    bomb: false
     flagged: false
     selected: false
   - !ruby/object:Tile
     pos:
     - 7
     - 1
-    board: *70286271657660
+    board: *1
     revealed: false
     bomb: false
     flagged: false
@@ -591,7 +591,7 @@ grid:
     pos:
     - 7
     - 2
-    board: *70286271657660
+    board: *1
     revealed: false
     bomb: false
     flagged: false
@@ -600,17 +600,17 @@ grid:
     pos:
     - 7
     - 3
-    board: *70286271657660
+    board: *1
     revealed: false
-    bomb: true
+    bomb: false
     flagged: false
     selected: false
   - !ruby/object:Tile
     pos:
     - 7
     - 4
-    board: *70286271657660
-    revealed: true
+    board: *1
+    revealed: false
     bomb: false
     flagged: false
     selected: false
@@ -618,8 +618,8 @@ grid:
     pos:
     - 7
     - 5
-    board: *70286271657660
-    revealed: true
+    board: *1
+    revealed: false
     bomb: false
     flagged: false
     selected: false
@@ -627,8 +627,8 @@ grid:
     pos:
     - 7
     - 6
-    board: *70286271657660
-    revealed: true
+    board: *1
+    revealed: false
     bomb: false
     flagged: false
     selected: false
@@ -636,8 +636,8 @@ grid:
     pos:
     - 7
     - 7
-    board: *70286271657660
-    revealed: true
+    board: *1
+    revealed: false
     bomb: false
     flagged: false
     selected: false
@@ -645,16 +645,16 @@ grid:
     pos:
     - 7
     - 8
-    board: *70286271657660
+    board: *1
     revealed: false
-    bomb: true
+    bomb: false
     flagged: false
     selected: false
 - - !ruby/object:Tile
     pos:
     - 8
     - 0
-    board: *70286271657660
+    board: *1
     revealed: false
     bomb: false
     flagged: false
@@ -663,7 +663,7 @@ grid:
     pos:
     - 8
     - 1
-    board: *70286271657660
+    board: *1
     revealed: false
     bomb: false
     flagged: false
@@ -672,7 +672,7 @@ grid:
     pos:
     - 8
     - 2
-    board: *70286271657660
+    board: *1
     revealed: false
     bomb: false
     flagged: false
@@ -681,7 +681,7 @@ grid:
     pos:
     - 8
     - 3
-    board: *70286271657660
+    board: *1
     revealed: false
     bomb: false
     flagged: false
@@ -690,8 +690,8 @@ grid:
     pos:
     - 8
     - 4
-    board: *70286271657660
-    revealed: true
+    board: *1
+    revealed: false
     bomb: false
     flagged: false
     selected: false
@@ -699,8 +699,8 @@ grid:
     pos:
     - 8
     - 5
-    board: *70286271657660
-    revealed: true
+    board: *1
+    revealed: false
     bomb: false
     flagged: false
     selected: false
@@ -708,8 +708,8 @@ grid:
     pos:
     - 8
     - 6
-    board: *70286271657660
-    revealed: true
+    board: *1
+    revealed: false
     bomb: false
     flagged: false
     selected: false
@@ -717,8 +717,8 @@ grid:
     pos:
     - 8
     - 7
-    board: *70286271657660
-    revealed: true
+    board: *1
+    revealed: false
     bomb: false
     flagged: false
     selected: false
@@ -726,9 +726,9 @@ grid:
     pos:
     - 8
     - 8
-    board: *70286271657660
+    board: *1
     revealed: false
     bomb: false
     flagged: false
     selected: false
-current_selection: *70286271677720
+current_selection: *2
