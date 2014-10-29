@@ -1,0 +1,13 @@
+<h1>All our cats!</h1>
+
+<ul>
+<% @cats.each do |cat| %>
+<li><a href="<%=cat_url(cat)%>"><%= cat.name %></a></li>
+<% end %>
+</ul>
+
+<a href="<%=new_cat_url%>">Create a new cat</a><br>
+<a href="<%= new_cat_rental_request_url %>">Make a new cat rental request</a><br>
+
+<img src="http://placekitten.com/g/600/600">
+<%= image_tag "bow-tie-kittens.jpg" %>
