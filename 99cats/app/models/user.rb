@@ -20,6 +20,14 @@ class User < ActiveRecord::Base
     dependent: :destroy
   )
   
+  has_many(
+    :logins,
+    class_name: "Login",
+    foreign_key: :user_id,
+    primary_key: :id,
+    dependent: :destroy
+    )
+  
   def self.find_by_credentials(user_name, password)
     return nil if password.empty?
     return nil unless User.find_by_username(user_name)
