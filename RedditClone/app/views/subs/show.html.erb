@@ -6,3 +6,7 @@
 <%= render partial: "posts/posts" %>
 
 <%= link_to "Back to all subs", subs_url %>
+
+<% if current_user.id == @sub.moderator.id %>
+  <%= link_to "Destroy Sub", sub_url(@sub), method: :delete %>
+<% end %>
