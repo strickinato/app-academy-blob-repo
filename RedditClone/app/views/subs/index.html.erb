@@ -1,0 +1,10 @@
+<h1>All Subs</h1>
+
+<ul>
+  <% @subs.each do |sub| %>
+    <li><%= link_to sub.title, sub_url(sub) %> - by 
+        <%= sub.moderator.username %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Create new sub", new_sub_url %>

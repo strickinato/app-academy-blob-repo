@@ -1,0 +1,8 @@
+<h1><%= @sub.title %></h1>
+<h2><%= @sub.description %></h2>
+<h2>Moderated by: <%= @sub.moderator.username %></h2>
+
+<%= render partial: "posts/form" %>
+<%= render partial: "posts/posts" %>
+
+<%= link_to "Back to all subs", subs_url %>

@@ -1,0 +1,8 @@
+<h1><%= current_user.username%>!!</h1>
+
+<h2>My Subs</h2>
+<ul>
+<% current_user.subs.each do |sub| %>
+  <li><%= link_to sub.title, sub_url(sub) %></li>
+<% end %>
+</ul>
