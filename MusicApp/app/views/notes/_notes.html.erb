@@ -1,0 +1,9 @@
+<% Note.where(track_id: track_id).order(created_at: :desc).each do |note| %>
+  <div class='track_note'>
+    <h4><%= note.author.email %></h4>
+    <p><%= note.track_note %></p>
+      <% if note.user_id == current_user.id %>
+        <%= link_to 'Delete', note, method:'delete' if note.user_id = current_user.id %>
+      <% end %>
+  </div>
+<% end %>

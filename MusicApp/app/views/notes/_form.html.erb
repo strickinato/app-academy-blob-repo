@@ -1,4 +1,3 @@
-<%= track_id %>
 <form action="<%= notes_url %>" method="POST">
 
   <input
@@ -7,7 +6,7 @@
     value = "<%= track_id %>">
 
   <label>Note:<br>
-    <textarea name="note[note]"><%= note.note %></textarea>
+    <textarea name="note[track_note]"><%= note.track_note %></textarea>
   </label>
   <br>
 

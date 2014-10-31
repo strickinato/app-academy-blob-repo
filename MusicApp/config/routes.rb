@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :albums
   resources :tracks
 
-  resources :notes, only: [:create]
+  resources :notes, only: [:create, :destroy]
 end

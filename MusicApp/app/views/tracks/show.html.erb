@@ -2,3 +2,4 @@
 <h1><%= @track.title %></h1>
 
 <%= render "notes/form", { note: Note.new, track_id: @track.id } %>
+<%= render "notes/notes", { track_id: @track.id } %>

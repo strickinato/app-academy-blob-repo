@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+.track_note{
+  background-color: red;
+  width: 25%
+}
