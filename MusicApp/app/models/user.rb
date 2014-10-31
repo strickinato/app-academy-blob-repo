@@ -10,6 +10,14 @@ class User < ActiveRecord::Base
     length: { minimum: 6, allow_nil: true }
   )
 
+  has_many(
+    :notes,
+    class_name: "Note",
+    foreign_key: :user_id,
+    primary_key: :id,
+    dependent: :destroy
+  )
+
   def self.find_by_credentials(email, password)
     user = User.find_by_email(email)
 

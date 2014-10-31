@@ -1,0 +1,15 @@
+<%= track_id %>
+<form action="<%= notes_url %>" method="POST">
+
+  <input
+    type="hidden"
+    name="note[track_id]"
+    value = "<%= track_id %>">
+
+  <label>Note:<br>
+    <textarea name="note[note]"><%= note.note %></textarea>
+  </label>
+  <br>
+
+  <input type="submit" value="Tell the world!">
+</form>

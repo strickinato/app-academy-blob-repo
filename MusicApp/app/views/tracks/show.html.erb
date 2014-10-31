@@ -1,2 +1,4 @@
 <pre><%= link_to "<--", album_url(@track.album.id) %></pre>
 <h1><%= @track.title %></h1>
+
+<%= render "notes/form", { note: Note.new, track_id: @track.id } %>
