@@ -10,11 +10,13 @@
   <br><br>
 
   <label>Studio
-    <input type="radio" name="album[recording_type]" value="studio">
+    <input type="radio" name="album[recording_type]" value="studio"
+    <%= 'checked' if @album.recording_type == 'studio' %>>
   </label>
 
   <label>Live
-    <input type="radio" name="album[recording_type]" value="live">
+    <input type="radio" name="album[recording_type]" value="live"
+    <%= 'checked' if @album.recording_type == 'live' %>>
   </label>
   <br><br>
 
