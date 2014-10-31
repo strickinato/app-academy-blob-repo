@@ -8,6 +8,25 @@
 </head>
 <body>
 
+<% if logged_in? %>
+    Logged In: <%= current_user.email %>
+    <form action="<%= session_url %>" method="POST">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Logout">
+    </form>
+<% end%>
+
+<ul>
+
+<% if flash[:notice] %>
+  <% flash[:notice].each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+<% end %>
+</ul>
+
+
+
 <%= yield %>
 
 </body>
