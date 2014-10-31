@@ -1,5 +1,6 @@
 <pre><%= link_to "<--", album_url(@track.album.id) %></pre>
 <h1><%= @track.title %></h1>
 
+<%= ugly_lyrics(@track.lyrics) %>
 <%= render "notes/form", { note: Note.new, track_id: @track.id } %>
 <%= render "notes/notes", { track_id: @track.id } %>

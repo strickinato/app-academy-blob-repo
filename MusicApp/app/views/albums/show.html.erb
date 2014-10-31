@@ -2,8 +2,10 @@
 <h1><%= @album.title %> by <%= @album.band.name %></h1>
 
 <ul>
-  <% @album.tracks.each do |track| %>
-  <li><%= link_to track.title, track_url(track.id) %></li>
+  <% all_tracks = @album.tracks.sort {|a,b| a.ord <=> b.ord }%>
+  <% all_tracks.each do |track| %>
+  <li><%= track.ord.to_s + ". " %>
+      <%= link_to track.title, track_url(track.id) %></li>
   <% end %>
 </ul>
 
