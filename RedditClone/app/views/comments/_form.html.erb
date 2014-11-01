@@ -1,0 +1,21 @@
+<h4>Comments</h4>
+<form action="/comments" method="POST">
+  <input
+     name="authenticity_token"
+     type="hidden"
+     value="<%= form_authenticity_token %>">
+
+  <input
+     name="comment[post_id]"
+     type="hidden"
+     value="<%= @post.id %>">
+   <br>
+  
+    
+  <label for="comment_content">Content</label><br>
+  <textarea name="comment[content]" id="comment_content"></textarea>
+  <br>
+  <input type="submit" value="Create Comment!">
+    <br>  <br>
+</form>
+  

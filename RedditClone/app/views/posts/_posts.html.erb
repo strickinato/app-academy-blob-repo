@@ -9,9 +9,8 @@
     <p>Post Author: <%= post.author.username %></p>
   
     <p><%= post.content %></p>
-    
     <% if current_user.id == post.author.id || 
-          current_user.id == post.sub.moderator %>
+          current_user.id == Sub.find(params[:id]).moderator.id %>
           <%= link_to "Edit Post", edit_post_url(post, sub_id: @sub.id) %>
           <%= link_to "Delete Post", post_url(post), method: :delete %>
     <% end %>

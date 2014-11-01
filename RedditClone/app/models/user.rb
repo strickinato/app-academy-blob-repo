@@ -23,6 +23,14 @@ class User < ActiveRecord::Base
     dependent: :destroy
   )
   
+  has_many(
+    :comments,
+    class_name: "Comment",
+    foreign_key: :user_id,
+    primary_key: :id,
+    dependent: :destroy
+  )
+  
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
     user && user.is_password?(password) ? user : nil

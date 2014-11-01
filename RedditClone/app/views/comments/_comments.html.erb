@@ -1,0 +1,12 @@
+<% @post.comments.each do |comment| %>
+  <div style='border: 2px dotted green;'>
+    <p>Jerk with an opinion: <%= comment.author.username %></p>
+  
+    <p><%= comment.content %></p>
+    
+    <% if current_user.id == comment.author.id || 
+          current_user.id == @post.sub.moderator %>
+    <% end %>
+  </div>
+<% end %>
+
