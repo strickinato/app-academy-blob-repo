@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   end
   
   def edit
-    @sub = Sub.find(params[:sub_id])
+    @sub = Sub.find(params[:sub_id]) unless params[:sub_id].nil?
     @post = Post.find(params[:id])
     render :edit
   end
@@ -17,10 +17,9 @@ class PostsController < ApplicationController
   end
   
   def create
-    @post = Post.new(post_params)
-    # @postsub = Postsub.new(post_id: @post.id, sub_id: params[:id])
-    
+    @post = Post.new(post_params)    
     @post.author_id = current_user.id
+    
     if @post.save
       Postsub.add_subs_from_new_posts(params[:post][:subs], @post.id)
       redirect_to(:back)
@@ -33,7 +32,11 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to sub_url(params[:sub_id])
+      unless params[:sub_id].empty?
+        redirect_to sub_url(params[:sub_id])
+      else
+        redirect_to post_url(@post)
+      end
     else
       flash.now[:notice] = @post.errors.full_messages
       render :edit
