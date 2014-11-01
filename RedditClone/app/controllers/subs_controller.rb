@@ -8,6 +8,7 @@ class SubsController < ApplicationController
   end
   
   def show
+    @subs = Sub.all
     @sub = Sub.find(params[:id])
     render :show
   end
@@ -25,7 +26,7 @@ class SubsController < ApplicationController
   def create
     @sub = Sub.new(sub_params)
     @sub.moderator_id = current_user.id
-    
+
     if @sub.save
       redirect_to sub_url(@sub)
     else

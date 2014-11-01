@@ -5,11 +5,7 @@
      name="authenticity_token"
      type="hidden"
      value="<%= form_authenticity_token %>">
-  
-  <input
-    type="hidden"
-    name="post[sub_id]"
-    value="<%= @post.sub_id %>">
+  <input type="hidden" name="sub_id" value='<%= @sub.id %>'>
      
   <label for="post_title">Title</label>
   <input 

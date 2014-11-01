@@ -4,11 +4,6 @@
      name="authenticity_token"
      type="hidden"
      value="<%= form_authenticity_token %>">
-  
-  <input
-    type="hidden"
-    name="post[sub_id]"
-    value="<%= @sub.id %>">
      
   <label for="post_title">Title</label>
   <input 
@@ -23,6 +18,14 @@
     name="post[url]" 
     id="post_url"
     value="">
+  <br>
+  <% @subs.each do |sub| %>
+    <input type="checkbox" 
+           name="post[subs][]" 
+           id="post_sub_<%=sub.title%>" 
+           value = "<%=sub.id %>">
+           <label for="post_sub_<%=sub.title%>"><%=sub.title%></label>
+  <% end %>
   <br>
   <label for="post_content">Content</label>
   <textarea name="post[content]" id="post_content"></textarea>
