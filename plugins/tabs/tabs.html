@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.17.2/build/cssreset/cssreset-min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="./tabs.js"></script>
+    <link href="./tabs.css" rel="stylesheet" type="text/css">
+    <title>My Cool Website</title>
+  </head>
+
+  <body>
+    <ul class='tabs' data-content-tabs="#content-tabs">
+      <li><a class='active' href='#cock-a-poo'>Cock-a-poos</a></li>
+      <li><a href='#yellow-lab'>Yellow Labradors</a></li>
+      <li><a href='#pomeranian'>Pomeranians</a></li>
+      <li><a href='#boxer'>Boxers</a></li>
+    </ul>
+    
+    <div id="content-tabs">
+      <div class="tab-pane active" id="cock-a-poo">
+        <p>My folks have a cock-a-poo!</p>
+      </div>
+      <div class="tab-pane" id="yellow-lab">
+        <p>My yellow lab died about 5 years ago :(</p>
+      </div>
+      <div class="tab-pane" id="pomeranian">
+        <p>My girlfriend has a pomeranian. </p></div>
+      <div class="tab-pane" id ="boxer">
+        <p>Boxers are sometimes white.</p>
+      </div>
+    </div>
+    
+    
+    
+    
+    <script>
+      $(function() {
+        $('.tabs').tabs();
+      })
+    </script>
+  </body>
+</html>

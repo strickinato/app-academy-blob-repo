@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.17.2/build/cssreset/cssreset-min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="./kittencarousel.js"></script>
+    <link href="./kittencarousel.css" rel="stylesheet" type="text/css">
+    <title>My Cool Website</title>
+  </head>
+
+  <body>
+    <a a="javascript:void(0)" class="slide-right">Prev</a>
+    <a href="javascript:void(0)" class="slide-left">Next</a>
+    <div class="carousel">
+      <div class="items">
+        <img class="active" src="http://placecorgi.com/400/400" />
+        <img src="http://placecorgi.com/400/400" />
+        <img src="http://placecorgi.com/400/400" />
+        <img src="http://placecorgi.com/400/400" />
+      </div>
+
+
+    </div>
+    
+    <script>
+      $(function() {
+        $('.carousel').carousel();
+      })
+    </script>
+  </body>
+</html>
