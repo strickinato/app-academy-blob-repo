@@ -5,6 +5,15 @@ Pokedex.RootView.prototype.renderPokemonDetail = function (pokemon) {
     $el.append("<tr><td>" + key + ":  </td><td>" + val + "</td></tr>");
   })
   $el.append("</table>")
+  $el.append("<ul>");
+  var that = pokemon;
+  var xthat = this
+  pokemon.fetch({
+    success: function() {
+      _.each(that.toys().models, function(toy) { xthat.addToyToList(toy); })
+    }
+  })
+  $el.append("</ul>");
   this.$pokeDetail.html($el);
 };
 
