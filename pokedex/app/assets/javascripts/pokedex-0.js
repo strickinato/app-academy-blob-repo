@@ -44,6 +44,7 @@ window.Pokedex.RootView = function ($el) {
   this.$toyDetail = this.$el.find('.toy-detail');
 
   $('.pokemon-list').on('click','li', this.selectPokemonFromList.bind(this));
+  $('.new-pokemon').on('submit', this.submitPokemonForm.bind(this));
 };
 
 $(function() {
