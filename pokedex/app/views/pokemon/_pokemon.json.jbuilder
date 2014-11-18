@@ -4,7 +4,7 @@ json.extract!(
 
 if show_toys
   json.toys do
-    json.array!(cat.toys) do |toy|
+    json.array!(pokemon.toys) do |toy|
       json.partial!("toys/toy", toy: toy)
     end
   end
