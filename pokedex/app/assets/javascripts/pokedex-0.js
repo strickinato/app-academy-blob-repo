@@ -3,47 +3,78 @@ window.Pokedex.Models = {};
 window.Pokedex.Collections = {};
 
 Pokedex.Models.Pokemon = Backbone.Model.extend({
-  urlRoot: "/pokemon",
-  toys: function() {
-    if(!this._toys) {
-      this._toys = new Pokedex.Collections.PokemonToys();
-      return this._toys;
-    } else {
-      return this._toys;
+  urlRoot: '/pokemon',
+
+  // Phase II
+  parse: function (payload) {
+    if (payload.toys) {
+      this.toys().set(payload.toys);
+      delete payload.toys;
+
+      // Phase IV
+      this.toys().forEach((function (toy) {
+        toy._pokemon = this;
+      }).bind(this));
     }
-  },
-  parse: function(payload){
-    if (payload.toys){
-      var toys = this.toys();
-      toys.set(payload.toys);
-      // var happyTimes = this.toys()
-      // _.each(payload.toys, function(val, key){
-      //   happyTimes.set(key, val);
-      // });
-      delete payload.toys; //remove tows from payload
-    }
+
     return payload;
+  },
+
+  // Phase II
+  toys: function () {
+    if (!this._toys) {
+      this._toys =
+        new Pokedex.Collections.PokemonToys([], { pokemon: this });
+    }
+
+    return this._toys;
   }
-}); // WRITE ME
+});
 
 Pokedex.Models.Toy = Backbone.Model.extend({
-}); // WRITE ME IN PHASE 2
+  urlRoot: '/toys',
+
+  // Phase IV
+  pokemon: function () {
+    if (!this._pokemon) {
+      this._pokemon =
+        new Pokedex.Models.Pokemon({ id: this.pokemon_id });
+    }
+
+    return this._pokemon;
+  },
+
+  // Phase IV
+  parse: function (payload) {
+    if (payload.pokemon) {
+      this._pokemon =
+        new Pokedex.Models.Pokemon(payload.pokemon, { parse: true });
+      delete payload.pokemon;
+    }
+
+    return payload;
+  }
+});
 
 Pokedex.Collections.Pokemon = Backbone.Collection.extend({
   model: Pokedex.Models.Pokemon,
-  url: "/pokemon"
-}); // WRITE ME
+  url: '/pokemon'
+});
 
 Pokedex.Collections.PokemonToys = Backbone.Collection.extend({
-  model: Pokedex.Models.Toy
-}); // WRITE ME IN PHASE 2
+  model: Pokedex.Models.Toy,
+
+  initialize: function(models, options) {
+    this.pokemon = options.pokemon;
+  }
+});
 
 window.Pokedex.Test = {
   testShow: function (id) {
     var pokemon = new Pokedex.Models.Pokemon({ id: id });
     pokemon.fetch({
       success: function () {
-        console.log(pokemon.toJSON());
+        (pokemon.toJSON());
       }
     });
   },
@@ -52,7 +83,7 @@ window.Pokedex.Test = {
     var pokemon = new Pokedex.Collections.Pokemon();
     pokemon.fetch({
       success: function () {
-        console.log(pokemon.toJSON());
+        (pokemon.toJSON());
       }
     });
   }
@@ -66,12 +97,23 @@ window.Pokedex.RootView = function ($el) {
   this.$newPoke = this.$el.find('.new-pokemon');
   this.$toyDetail = this.$el.find('.toy-detail');
 
-  $('.pokemon-list').on('click','li', this.selectPokemonFromList.bind(this));
-  $('.new-pokemon').on('submit', this.submitPokemonForm.bind(this));
+  // Click handlers go here.
+  this.$pokeList.on(
+    'click', 'li', this.selectPokemonFromList.bind(this)
+  );
+  this.$newPoke.on(
+    'submit', this.submitPokemonForm.bind(this)
+  );
+  this.$pokeDetail.on(
+    'click', '.toys li', this.selectToyFromList.bind(this)
+  );
+  this.$toyDetail.on(
+    'change', 'select', this.reassignToy.bind(this)
+  );
 };
-
-$(function() {
-  var $rootEl = $('#pokedex');
-	window.Pokedex.rootView = new Pokedex.RootView($rootEl);
-  window.Pokedex.rootView.refreshPokemon();
-});
+//
+// $(function() {
+//   var $rootEl = $('#pokedex');
+//   window.Pokedex.rootView = new Pokedex.RootView($rootEl);
+//   window.Pokedex.rootView.refreshPokemon();
+// });
