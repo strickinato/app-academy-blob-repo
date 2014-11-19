@@ -1,0 +1,10 @@
+<ul>
+  <% posts.each(function(post){ %>
+    <li>
+      <%= post.get('title') %>
+      <button
+        data-id="<%= post.get('id') %>"
+        class="post-delete-button">Delete</button>
+    </li>
+  <% }); %>
+</ul>
