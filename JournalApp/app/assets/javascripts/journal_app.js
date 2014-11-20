@@ -4,12 +4,22 @@ window.JournalApp = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    new JournalApp.Routers.AppRouter({ 
+      $indexEl: $('#index'),
+      $showEl: $('#show-div'),
+      $formEl: $('#form-div')
+      }
+    );
+    Backbone.history.start();
+    
+    var postsIdxCol = new JournalApp.Collections.Posts();
+    postsIdxCol.fetch()
+    var index = new JournalApp.Views.PostsIndexView({collection: postsIdxCol});
+    $("#sidebar").html(index.render().$el)
+
   }
 };
 
 $(document).ready(function(){
   JournalApp.initialize();
-  var view = new JournalApp.Views.PostsIndexView();
-  view.initialize();
 });
