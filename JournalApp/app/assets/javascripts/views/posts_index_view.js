@@ -24,7 +24,7 @@ JournalApp.Views.PostsIndexView = Backbone.View.extend({
 
     this.listenTo(
       this.collection, 
-      "remove add change:title reset",
+      "remove add change:title reset sync",
       this.render);
       
 

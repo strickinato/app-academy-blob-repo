@@ -33,8 +33,10 @@ JournalApp.Routers.AppRouter = Backbone.Router.extend({
   
   postForm: function(){
     var formModel = new JournalApp.Models.Post();
+    var formCollection = new JournalApp.Collections.Posts();
     var view = new JournalApp.Views.PostFormView({
-      model: formModel
+      model: formModel,
+      collection: formCollection
     })
     this.$formEl.html(view.render().$el)  
   },

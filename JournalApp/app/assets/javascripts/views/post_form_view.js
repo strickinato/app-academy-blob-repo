@@ -14,14 +14,21 @@ JournalApp.Views.PostFormView = Backbone.View.extend({
   
   createPost: function(event) {
     event.preventDefault();
-    var $form = $('#form-div form')
+    var that = this;
+    var $form = $('#form-div form');
     var formData = $form.serializeJSON();
     $.ajax({
       url: "/posts",
       type: "POST",
       data: formData,
       dataType: 'JSON',
-      success: function() { Backbone.history.navigate("#", {trigger: true}) }
+      success: function(resp) {
+        var respModel = new JournalApp.Models.Post(resp);
+        // debugger
+        JournalApp.posts.add(resp)
+        Backbone.history.navigate("#", {trigger: true});
+        
+      }
     })
   },
   

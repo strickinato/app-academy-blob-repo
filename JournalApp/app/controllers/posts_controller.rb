@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
-    sleep 4
+
     render json: @posts
   end
   
